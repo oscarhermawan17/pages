@@ -14,29 +14,42 @@ import { Link } from "react-scroll"
 import { Menu } from "@mui/icons-material"
 import useStyles from "./NavbarStyles"
 import logo from "./AnjaliLogo.png"
+type BackgroundType =
+  | "navbarTransparent"
+  | "navbarSolid"
+  | "space"
+  | "icon"
+  | "logo"
+  | "tabs"
+  | "drawerTabSpacing"
 
 //header section of website
 const Navbar: React.FC = () => {
   const [state, setState] = useState({ left: false })
-  const [background, setBackground] = useState("navbarTransparent")
+  const [background, setBackground] =
+    useState<BackgroundType>("navbarTransparent")
 
   const classes = useStyles()
   const desktop = useMediaQuery("(min-width: 900px)")
   const mobile = useMediaQuery("(max-width: 900px)")
 
-  const toggleDrawer = (anchor, open) => (event) => {
-    if (
-      event.type === "keydown" &&
-      (event.key === "Tab" || event.key === "Shift")
-    ) {
-      // detects if it was accidentally triggered
-      return
+  const toggleDrawer =
+    (anchor: string, open: boolean) =>
+    (event: React.KeyboardEvent | React.MouseEvent) => {
+      if (
+        event.type === "keydown" &&
+        (event as React.KeyboardEvent).key &&
+        ((event as React.KeyboardEvent).key === "Tab" ||
+          (event as React.KeyboardEvent).key === "Shift")
+      ) {
+        // detects if it was accidentally triggered
+        return
+      }
+
+      setState({ ...state, [anchor]: open })
     }
 
-    setState({ ...state, [anchor]: open })
-  }
-
-  const navRef = useRef()
+  const navRef = useRef<BackgroundType>()
   navRef.current = background
 
   useEffect(() => {
