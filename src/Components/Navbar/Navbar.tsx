@@ -12,7 +12,7 @@ import {
 } from "@mui/material"
 import { Link } from "react-scroll"
 import { Menu } from "@mui/icons-material"
-import useStyles from "./NavbarStyles"
+import useStyles, { NavbarStylesSx } from "./NavbarStyles"
 import logo from "./AnjaliLogo.png"
 type BackgroundType =
   | "navbarTransparent"
@@ -69,7 +69,7 @@ const Navbar: React.FC = () => {
   }, [])
 
   return (
-    <AppBar elevation={0} className={classes[navRef.current]}>
+    <AppBar elevation={0} sx={NavbarStylesSx[navRef.current]}>
       <Toolbar>
         {/* Initials */}
         <div style={{ marginRight: "1%" }} />
@@ -83,19 +83,19 @@ const Navbar: React.FC = () => {
           <>
             <Tabs aria-label="tabs">
               <Link smooth="true" duration={1000} to="home">
-                <Tab className={classes.tabs} label="Home" />
+                <Tab sx={NavbarStylesSx.tabs} label="Home" />
               </Link>
               <Link smooth="true" duration={1000} offset={-50} to="skills">
-                <Tab className={classes.tabs} label="Skills" />
+                <Tab sx={NavbarStylesSx.tabs} label="Skills" />
               </Link>
               <Link smooth="true" duration={1000} offset={-70} to="projects">
-                <Tab className={classes.tabs} label="Projects" />
+                <Tab sx={NavbarStylesSx.tabs} label="Projects" />
               </Link>
               <Link smooth="true" duration={1000} offset={-70} to="about">
-                <Tab className={classes.tabs} label="About" />
+                <Tab sx={NavbarStylesSx.tabs} label="About" />
               </Link>
               <Link smooth="true" duration={1000} offset={-70} to="contact">
-                <Tab className={classes.tabs} label="Contact" />
+                <Tab sx={NavbarStylesSx.tabs} label="Contact" />
               </Link>
             </Tabs>
           </>
@@ -105,7 +105,7 @@ const Navbar: React.FC = () => {
         {mobile && (
           <>
             <IconButton onClick={toggleDrawer("left", true)} aria-label="menu">
-              <Menu className={classes.icon} />
+              <Menu sx={NavbarStylesSx.icon} />
             </IconButton>
             <Drawer
               variant="temporary"
@@ -123,7 +123,7 @@ const Navbar: React.FC = () => {
                     <div className={classes.drawerTabSpacing}>
                       <Tab
                         onClick={toggleDrawer("left", false)}
-                        className={classes.tabs}
+                        sx={NavbarStylesSx.tabs}
                         label="Home"
                       />
                     </div>
@@ -132,7 +132,7 @@ const Navbar: React.FC = () => {
                     <div className={classes.drawerTabSpacing}>
                       <Tab
                         onClick={toggleDrawer("left", false)}
-                        className={classes.tabs}
+                        sx={NavbarStylesSx.tabs}
                         label="Skills"
                       />
                     </div>
@@ -146,7 +146,7 @@ const Navbar: React.FC = () => {
                     <div className={classes.drawerTabSpacing}>
                       <Tab
                         onClick={toggleDrawer("left", false)}
-                        className={classes.tabs}
+                        sx={NavbarStylesSx.tabs}
                         label="Projects"
                       />
                     </div>
@@ -155,7 +155,7 @@ const Navbar: React.FC = () => {
                     <div className={classes.drawerTabSpacing}>
                       <Tab
                         onClick={toggleDrawer("left", false)}
-                        className={classes.tabs}
+                        sx={NavbarStylesSx.tabs}
                         label="About"
                       />
                     </div>
