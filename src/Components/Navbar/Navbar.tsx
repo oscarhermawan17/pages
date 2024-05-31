@@ -13,7 +13,7 @@ import {
 import { Link } from "react-scroll"
 import { Menu } from "@mui/icons-material"
 import useStyles, { NavbarStylesSx } from "./NavbarStyles"
-import logo from "./AnjaliLogo.png"
+import logo from "./OscarLogo.png"
 type BackgroundType =
   | "navbarTransparent"
   | "navbarSolid"

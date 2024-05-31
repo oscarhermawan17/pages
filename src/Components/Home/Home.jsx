@@ -10,8 +10,8 @@ import { Link } from "react-scroll"
 import Typewriter from "typewriter-effect"
 import { FaGithub, FaLinkedin, FaYoutube } from "react-icons/fa"
 import { IoDocumentText } from "react-icons/io5"
-import photoMe from "./anj.png"
-import Resume from "./resume.pdf"
+import photoMe from "./Oscar.png"
+import Resume from "./Resume.pdf"
 
 // file imports
 import useStyles, { HomeStylesSx } from "./HomeStyles"
@@ -31,7 +31,7 @@ const Home = () => {
             <div>
               <a
                 rel="noreferrer"
-                href="https://github.com/anjalig21"
+                href="https://github.com/oscarhermawan17"
                 target="_blank"
               >
                 <IconButton
@@ -43,7 +43,7 @@ const Home = () => {
               </a>
               <a
                 rel="noreferrer"
-                href="https://www.linkedin.com/in/anjali-gupta21/"
+                href="https://www.linkedin.com/in/oscar-hermawan/"
                 target="_blank"
               >
                 <IconButton
@@ -55,7 +55,7 @@ const Home = () => {
               </a>
               <a
                 rel="noreferrer"
-                href="https://www.youtube.com/channel/UC4D7JjZ4xrp-OWjl3h05Q6A"
+                href="https://www.youtube.com/"
                 target="_blank"
               >
                 <IconButton
@@ -81,7 +81,7 @@ const Home = () => {
               </Typography>
               <br />
               <Typography sx={HomeStylesSx.titleText} variant="h1">
-                Anjali Gupta
+                Oscar Hermawan
               </Typography>
               <div className={classes.inline}>
                 {mobile && (
@@ -94,7 +94,7 @@ const Home = () => {
                     <b>
                       <Typewriter
                         options={{
-                          strings: ["Developer", "Leader", "Designer"],
+                          strings: ["Software Engineer", "Web Developer", "Dog Lovers"],
                           autoStart: true,
                           loop: true,
                         }}
